@@ -1,0 +1,156 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Bricolage Grotesque', sans-serif;
+    --font-serif: 'Fraunces', serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #06070B;
+    color: #F4F4F6;
+    letter-spacing: 0.01em;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-editorial {
+    font-family: var(--font-serif);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Prevent sticky header from covering section headings on anchor navigation */
+  section[id] {
+    scroll-margin-top: 5.5rem;
+  }
+}
+
+/* Multi-tone chromatic developer workspace canvas with subtle aurora lighting & architectural grid */
+.bg-workspace-canvas {
+  background-color: #06070B;
+  background-image:
+    radial-gradient(circle at 15% 8%, rgba(242, 183, 5, 0.11), transparent 38%),
+    radial-gradient(circle at 85% 12%, rgba(59, 130, 246, 0.11), transparent 40%),
+    radial-gradient(circle at 50% 48%, rgba(168, 85, 247, 0.07), transparent 48%),
+    radial-gradient(circle at 20% 85%, rgba(16, 185, 129, 0.08), transparent 42%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 100% 100%, 100% 100%, 44px 44px, 44px 44px;
+  background-position: top center;
+}
+
+.bg-section-subtle {
+  background-color: rgba(11, 13, 20, 0.78);
+  background-image:
+    radial-gradient(circle at 85% 15%, rgba(59, 130, 246, 0.08), transparent 45%),
+    radial-gradient(circle at 12% 80%, rgba(242, 183, 5, 0.07), transparent 45%);
+}
+
+.text-gradient-aurora {
+  background: linear-gradient(135deg, #F2B705 0%, #FB7185 50%, #38BDF8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Purposeful, compositor-safe card and control micro-interactions */
+.interactive-card {
+  transition:
+    transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.interactive-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Flagship card multi-point ambient glow & surface depth */
+.card-glow-flagship {
+  background-color: #11131E;
+  background-image:
+    radial-gradient(circle at 12% 14%, rgba(242, 183, 5, 0.14), transparent 46%),
+    radial-gradient(circle at 88% 86%, rgba(56, 189, 248, 0.12), transparent 48%),
+    linear-gradient(165deg, rgba(22, 26, 42, 0.96) 0%, rgba(12, 14, 24, 0.98) 100%);
+  box-shadow:
+    0 16px 48px -12px rgba(242, 183, 5, 0.16),
+    0 8px 28px -10px rgba(56, 189, 248, 0.1),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+.card-glow-flagship:hover {
+  box-shadow:
+    0 22px 56px -10px rgba(242, 183, 5, 0.25),
+    0 10px 32px -8px rgba(56, 189, 248, 0.16),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.16);
+}
+
+/* Subtle background gradient & ambient glow for project and about/skill cards */
+.card-glow-surface {
+  box-shadow:
+    0 12px 36px -14px var(--glow-color, rgba(56, 189, 248, 0.15)),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+.card-glow-surface:hover {
+  box-shadow:
+    0 20px 44px -12px var(--glow-hover, rgba(56, 189, 248, 0.28)),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+}
+
+.subcard-glow-surface {
+  background-image: linear-gradient(160deg, rgba(19, 23, 38, 0.9) 0%, rgba(9, 11, 18, 0.95) 100%);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+  transition:
+    border-color 180ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 180ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.subcard-glow-surface:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 24px -10px var(--subcard-glow, rgba(56, 189, 248, 0.2)),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+.interactive-btn {
+  transition:
+    transform 150ms cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 150ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 150ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 150ms cubic-bezier(0.16, 1, 0.3, 1),
+    color 150ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.interactive-btn:active {
+  transform: scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .interactive-card,
+  .interactive-card:hover,
+  .interactive-btn,
+  .interactive-btn:active {
+    transition: none;
+    transform: none;
+  }
+}
